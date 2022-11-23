@@ -6,7 +6,7 @@ const getParams = function (pathname){
     let virtual_location = window.location.href;
 
     if (pathname?.startsWith("/categories")){
-        virtual_title = '상품 리스트';
+        virtual_title = '상품 리스트2';
         virtual_location = 'http://localhost:3000/categories';
     } else if (pathname?.startsWith("/products")){
         virtual_title = '상품 조회';
