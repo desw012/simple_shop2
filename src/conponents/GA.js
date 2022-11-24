@@ -1,5 +1,5 @@
-import {useLocation} from "react-router-dom";
-import {useEffect} from "react";
+// import {useLocation} from "react-router-dom";
+// import {useEffect} from "react";
 
 const getParams = function (pathname){
     let virtual_title = document.title;
@@ -17,15 +17,11 @@ const getParams = function (pathname){
 }
 
 function GA(){
-    const location = useLocation();
-    useEffect(() => {
-        const param = getParams(location.pathname);
-        document.title = param.virtual_title;
-
-        // window?.dataLayer?.push({
-        //     event: 'ga_virtual', ...param
-        // });
-    }, [location]);
+    // const location = useLocation();
+    // useEffect(() => {
+    //     const param = getParams(location.pathname);
+    //     document.title = param.virtual_title;
+    // }, [location]);
 
     return (
         <></>

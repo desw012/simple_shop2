@@ -1,13 +1,14 @@
 import {Link, useParams, use} from "react-router-dom";
 import {Button, Card, Col, Row} from "react-bootstrap";
 import {useCallback, useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
+import {addProduct} from "../store/slices/cartSlice";
 
 function Products() {
     const { categoryId } = useParams();
 
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
-
 
     useEffect(() => {
         const getProducts = async () => {
@@ -21,17 +22,24 @@ function Products() {
         getProducts()
     }, [categoryId]);
 
+    const dispatch = useDispatch();
+    const addCart = (product) => {
+        console.log(product);
+        dispatch(addProduct(product));
+    }
+
+
     return (
         <>
             <h1>
                 categoryId : {categoryId}
             </h1>
             <Row xs={1} md={2} lg={5} className="g-4">
-            {data.map(product => {
+            { data.map(product => {
                 return (
                     <Col key={product.id}>
-                        <Card >
-                            <Card.Img variant="top" src={product.image} />
+                        <Card>
+                            <Card.Img variant="top" src={ product.image } />
                             <Card.Body>
                                 <Card.Title>{product.title}</Card.Title>
                                 <Card.Text>{product.description}</Card.Text>
@@ -39,11 +47,11 @@ function Products() {
                                 <a href ={"/products/"+ product.id}>
                                     <Button variant="primary">Buy</Button>
                                 </a>
-                                {/*<Link to ={"/products/"+ product.id}>*/}
-                                {/*    <Button variant="primary">Buy</Button>*/}
-                                {/*</Link>*/}
+                                { /*<Link to ={"/products/"+ product.id}>*/ }
+                                { /*    <Button variant="primary">Buy</Button>*/ }
+                                { /*</Link>*/ }
 
-                                <Button>Add to Cart</Button>
+                                <Button onClick={()=>addCart(product)}>Add to Cart</Button>
                             </Card.Body>
                         </Card>
                     </Col>

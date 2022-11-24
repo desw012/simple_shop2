@@ -35,7 +35,7 @@ function Home() {
             'dimension2' : '맞춤 측정기준 1값'
         });
 
-    });
+    }, []);
 
     const handler_UA_ECOMMERCE_TRIGER_1 = useCallback(()=>{
         window?.dataLayer?.push({
@@ -53,7 +53,7 @@ function Home() {
                         { 'id' : 'GSP020H23', 'name' : '여름 프리뷰 티셔츠' }
                     ] }
             } });
-    });
+    }, []);
 
     const handler_UA_ECOMMERCE_TRIGER_2 = useCallback(()=>{
         window?.dataLayer?.push({
@@ -84,7 +84,7 @@ function Home() {
             action : undefined,
             ecommerce : undefined
         })
-    });
+    }, []);
 
 
     const handler_UA_ECOMMERCE_TRIGER_3 = useCallback(()=>{
@@ -119,7 +119,7 @@ function Home() {
                     }]
             }
         });
-    });
+    }, []);
 
     const handler_UA_ECOMMERCE_TRIGER_4 = useCallback(()=> {
 
@@ -155,7 +155,7 @@ function Home() {
                 //document.location = productObj.url
             }
         });
-    });
+    }, []);
 
 
     const handler_UA_ECOMMERCE_TRIGER_5 = useCallback(()=> {
@@ -189,7 +189,7 @@ function Home() {
                 }
             }
         });
-    });
+    }, []);
 
     const handler_UA_ECOMMERCE_TRIGER_6 = useCallback(()=> {
         const productObj = {
@@ -223,7 +223,7 @@ function Home() {
                 }
             }
         });
-    });
+    }, []);
     return (
         <div className="container">
             <div className="row">
@@ -248,7 +248,6 @@ function Home() {
                         <Button variant="secondary" onClick={handler_UA_ECOMMERCE_TRIGER_4}>click</Button>
                         <Button variant="secondary" onClick={handler_UA_ECOMMERCE_TRIGER_5}>detail</Button>
                         <Button variant="secondary" onClick={handler_UA_ECOMMERCE_TRIGER_6}>add to Cart</Button>
-
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import Header from "./conponents/Header";
 import Products from "./conponents/Products";
 import Detail from "./conponents/Detail";
 import GA from "./conponents/GA";
+import YoutubePlayer from "./conponents/YoutubePlayer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/categories/:categoryId" element={<Products/>} />
                 <Route path="/products/:productId" element={<Detail/>} />
+                <Route path="/youtube" element={<YoutubePlayer/>} />
             </Routes>
 
           <GA/>
