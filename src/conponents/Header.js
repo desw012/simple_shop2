@@ -3,10 +3,7 @@ import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
 
 function Header() {
-
-    const cartItems = useSelector((state) => state.cart)
-
-
+    const cart = useSelector((state) => state.cart)
 
     return (
         <Navbar bg="light" expand="lg">
@@ -23,7 +20,7 @@ function Header() {
                         <Nav.Link href="/categories/2">category2</Nav.Link>
                         <Nav.Link href="/categories/3">category3</Nav.Link>
                         <Nav.Link href="/youtube">youtube palyer</Nav.Link>
-                        <Nav.Link href="/cart">cardItems {cartItems.length}</Nav.Link>
+                        <Nav.Link href="/cart">cardItems {cart.items.length}</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

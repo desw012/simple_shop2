@@ -2,9 +2,11 @@ import {Link, useParams, use} from "react-router-dom";
 import {Button, Card, Col, Row} from "react-bootstrap";
 import {useCallback, useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
-import {addProduct} from "../store/slices/cartSlice";
+import { addCart } from "../store/slices/cartSlice";
 
 function Products() {
+    const dispatch = useDispatch();
+
     const { categoryId } = useParams();
 
     const [data, setData] = useState([]);
@@ -22,11 +24,7 @@ function Products() {
         getProducts()
     }, [categoryId]);
 
-    const dispatch = useDispatch();
-    const addCart = (product) => {
-        console.log(product);
-        dispatch(addProduct(product));
-    }
+
 
 
     return (
@@ -51,7 +49,7 @@ function Products() {
                                 { /*    <Button variant="primary">Buy</Button>*/ }
                                 { /*</Link>*/ }
 
-                                <Button onClick={()=>addCart(product)}>Add to Cart</Button>
+                                <Button onClick={()=>dispatch(addCart(product))}>Add to Cart</Button>
                             </Card.Body>
                         </Card>
                     </Col>
