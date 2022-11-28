@@ -20,7 +20,6 @@ import view_promotion from "../api/view_promotion";
 
 function Home() {
     const dispatch = useDispatch();
-    const [dataLayer, setDataLayer] = useState(window?.dataLayer);
 
     const handle_click = useCallback(()=>{
         // window?.dataLayer?.push({
@@ -268,21 +267,15 @@ function Home() {
         dispatch(showCodePreView(code));
     }, []);
 
-
-
     return (
         <div className="container">
             <div className="row">
                 <div className="col-12">
                     <div>Event</div>
                     <div className="btn-group-vertical">
-                        <Button variant="primary" onClick={handle_click}>Primary</Button>{' '}
-                        <button className="GA-tracking btn btn-default btn-xs gaButtonItem" id="GA-homepage-9bdd2-1"
-                                type="button">
-                            <span className="glyphicon glyphicon-info-sign"></span>
-                        </button>
-                        <Button variant="primary" onClick={handler_UA_EVEMT_TRIGER}>handler_UA_EVEMT_TRIGER</Button>{' '}
-                        <Button variant="primary">Primary</Button>{' '}
+                        <Button variant="primary" onClick={handle_click}>Primary</Button>
+                        <Button variant="primary" onClick={handler_UA_EVEMT_TRIGER}>handler_UA_EVEMT_TRIGER</Button>
+                        <Button variant="primary">Primary</Button>
                     </div>
 
                     <h1>전자상거래</h1>
@@ -305,7 +298,7 @@ function Home() {
                         <Button onClick={showModal}>Modal test</Button>
                     </div>
                     <Accordion>
-                        <Accordion.Item eventKey="0"v>
+                        <Accordion.Item eventKey="0">
                             <Accordion.Header>GA4/GTM E-COMMERCE TEST</Accordion.Header>
                             <Accordion.Body>
                                 <ListGroup>
